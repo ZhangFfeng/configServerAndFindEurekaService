@@ -19,6 +19,7 @@ public class HelloServiceImpl implements HelloService {
 //        System.out.println(responseEntity);
 //        return restTemplate.getForObject("http://ORGANIZATIONSERVICE/1", String.class);
         ResponseEntity<String> responseEntity = restTemplate.exchange("http://ORGANIZATIONSERVICE/v1/organizations/1/licenses/{name}", HttpMethod.GET, null, String.class, name);
+        System.out.println(responseEntity.getBody());
         return responseEntity.getBody();
     }
 
